@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asif Ahamad - JavaScript</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1e1e2f, #2c2c54);
+      margin: 0;
+      padding: 0;
+      color: #f1f1f1;
+    }
+    header {
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .section-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 20px;
+    }
+    .section-group {
+      flex: 1;
+      min-width: 350px;
+      max-width: 48%;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      padding: 15px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .section-title {
+      background: linear-gradient(to right, #ff6a00, #ee0979);
+      color: #fff;
+      padding: 10px;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    button, input, select, textarea {
+      font-size: 16px;
+      margin-top: 10px;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #444;
+      color: #f1f1f1;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #666;
+      cursor: pointer;
+    }
+    textarea {
+      height: 100px;
+    }
+    footer {
+      background: linear-gradient(90deg, #1f1c2c, #928dab);
+      color: #f1f1f1;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      box-shadow: 0 -3px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Asif Ahamad - JavaScript Website</h1>
+    <p>Explore interactive JavaScript demos</p>
+  </header>
+  <div class="section-container">
+    <div class="section-group">
+      <div class="section-title">Core JavaScript</div>
+      <div class='card'><h3>Button Toggle</h3><button id='colorBtn'>Click Me</button></div>
+      <div class='card'><h3>Grade Calculator</h3><input type='number' id='gradeMarks' placeholder='Enter marks'><button id='gradeBtn'>Check</button><div id='gradeOut'></div></div>
+      <div class='card'><h3>Operators Practice</h3><button id='opBtn'>Run</button><div id='opOut'></div></div>
+      <div class='card'><h3>User Profile</h3><input id='uName' placeholder='Name'><input id='uAge' type='number' placeholder='Age'><select id='uStudent'><option value='true'>Student</option><option value='false'>Not Student</option></select><button id='uBtn'>Submit</button><div id='uOut'></div></div>
+      <div class='card'><h3>Multiplication Table</h3><input id='num' type='number'><button id='mulBtn'>Generate</button><div id='mulOut'></div></div>
+      <div class='card'><h3>Even or Odd</h3><input id='eoInput' type='number'><button id='eoBtn'>Check</button><div id='eoOut'></div></div>
+      <div class='card'><h3>Countdown</h3><button id='countdownBtn'>Start Countdown</button><div id='countdownOut'></div></div>
+      <div class='card'><h3>Calculate Square</h3><input id='squareInput' type='number'><button id='squareBtn'>Calculate</button><div id='squareOut'></div></div>
+    </div>
+    <div class="section-group">
+      <div class="section-title">Advanced Features</div>
+      <div class='card'><h3>Control Flow</h3><input id='loopNum' type='number'><button id='evenOddBtn'>Check Even/Odd</button><button id='printBtn'>Print 1-10</button><button id='countBtn'>Count Down</button><div id='flowOut'></div></div>
+      <div class='card'><h3>Functions Activity</h3><input id='fnNum' type='number'><button id='squareFnBtn'>Square</button><button id='sumFnBtn'>Add</button><div id='fnOut'></div></div>
+      <div class='card'><h3>Light Bulb</h3><img id='bulbImg' src='https://www.w3schools.com/js/pic_bulboff.gif' style='width:150px;'><br><button id='bulbBtn'>Toggle</button></div>
+      <div class='card'><h3>Digital Clock</h3><div id='clock' style='font-size:2em;'></div></div>
+      <div class='card'><h3>Update Background Color</h3><input id='bgColorInput' placeholder='Enter a color'><button id='updateBgBtn'>Apply Color</button></div>
+      <div class='card'><h3>Basic Calculator</h3><input id='calc1' type='number'><input id='calc2' type='number'><select id='calcOp'><option>+</option><option>-</option><option>*</option><option>/</option></select><button id='calcBtn'>Calculate</button><div id='calcResult'></div></div>
+      <div class='card'><h3>Save Note</h3><textarea id='noteText'></textarea><button id='saveNoteBtn'>Save</button><div id='noteResult'></div></div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Asif Ahmad. All rights reserved.</p>
+  </footer>
+  <script>
+    alert('Hello! Welcome to my website made with JavaScript.');
+    const $ = id => document.getElementById(id);
+    function attachAllEvents() {
+      if ($('colorBtn')) $('colorBtn').onclick = () => $('colorBtn').style.backgroundColor = $('colorBtn').style.backgroundColor === 'red' ? 'blue' : 'red';
+      if ($('gradeBtn')) $('gradeBtn').onclick = () => {
+        const m = +$('gradeMarks').value;
+        const g = m >= 90 ? "A+" : m >= 80 ? "A" : m >= 70 ? "B" : m >= 60 ? "C" : m >= 50 ? "D" : "F";
+        $('gradeOut').innerText = "Grade: " + g;
+      };
+      if ($('opBtn')) $('opBtn').onclick = () => {
+        let a = 8, b = 3;
+        $('opOut').innerHTML = `a + b = ${a + b}<br>a - b = ${a - b}<br>a * b = ${a * b}<br>a / b = ${a / b}<br>a % b = ${a % b}<br>a > b = ${a > b}<br>(a > 5 && b < 10) = ${a > 5 && b < 10}`;
+      };
+      if ($('uBtn')) $('uBtn').onclick = () => {
+        const n = $('uName').value, a = +$('uAge').value, s = $('uStudent').value === 'true';
+        $('uOut').innerHTML = `Name: ${n}<br>Age: ${a}<br>Student: ${s ? 'Yes' : 'No'}`;
+      };
+      if ($('mulBtn')) $('mulBtn').onclick = () => {
+        const n = +$('num').value;
+        $('mulOut').innerHTML = Array.from({length: 10}, (_, i) => `${n} x ${i+1} = ${n*(i+1)}<br>`).join('');
+      };
+      if ($('eoBtn')) $('eoBtn').onclick = () => $('eoOut').innerText = +$('eoInput').value % 2 === 0 ? 'Even' : 'Odd';
+      if ($('countdownBtn')) $('countdownBtn').onclick = () => {
+        let i = 5;
+        $('countdownOut').innerText = '';
+        const interval = setInterval(() => {
+          $('countdownOut').innerText += i + ' ';
+          if (--i < 0) clearInterval(interval);
+        }, 500);
+      };
+      if ($('squareBtn')) $('squareBtn').onclick = () => $('squareOut').innerText = `Square: ${+$('squareInput').value ** 2}`;
+      if ($('evenOddBtn')) $('evenOddBtn').onclick = () => $('flowOut').innerText = +$('loopNum').value % 2 === 0 ? 'Even' : 'Odd';
+      if ($('printBtn')) $('printBtn').onclick = () => $('flowOut').innerText = [...Array(10).keys()].map(x=>x+1).join(' ');
+      if ($('countBtn')) $('countBtn').onclick = () => $('flowOut').innerText = [...Array(5)].map((_,i)=>5-i).join(' ');
+      if ($('squareFnBtn')) $('squareFnBtn').onclick = () => $('fnOut').innerText = "Square: " + (+$('fnNum').value ** 2);
+      if ($('sumFnBtn')) $('sumFnBtn').onclick = () => {
+        const a = +prompt("1st number"), b = +prompt("2nd number");
+        $('fnOut').innerText = "Sum: " + (a + b);
+      };
+      if ($('bulbBtn')) $('bulbBtn').onclick = () => {
+        const img = $('bulbImg');
+        img.src = img.src.includes('off') ? 'https://www.w3schools.com/js/pic_bulbon.gif' : 'https://www.w3schools.com/js/pic_bulboff.gif';
+      };
+      if ($('updateBgBtn')) $('updateBgBtn').onclick = () => document.body.style.backgroundColor = $('bgColorInput').value;
+      if ($('calcBtn')) $('calcBtn').onclick = () => {
+        const a = +$('calc1').value, b = +$('calc2').value, op = $('calcOp').value;
+        $('calcResult').innerText = `Result: ${op === '+' ? a + b : op === '-' ? a - b : op === '*' ? a * b : b !== 0 ? a / b : 'Cannot divide by 0'}`;
+      };
+      if ($('saveNoteBtn')) $('saveNoteBtn').onclick = () => {
+        const note = $('noteText').value;
+        localStorage.setItem('userNote', note);
+        $('noteResult').innerText = `Saved: ${note}`;
+      };
+    }
+    function initClock() {
+      if (!$('clock')) return;
+      setInterval(() => {
+        $('clock').innerText = new Date().toLocaleTimeString();
+      }, 1000);
+    }
+    attachAllEvents();
+    initClock();
+  </script>
+</body>
+</html>
